@@ -48,61 +48,30 @@
   </style>
   <script type="module">
     const CHINELOS = [
-      {
-        name: "chinelo de quarto cinzento",
-        src: "media/chinelo-quarto-cinzento.avif",
-        gender: "M",
-      },
-      {
-        name: "chinelo de quarto bege",
-        src: "media/chinelo-quarto-bege.avif",
-        gender: "M",
-      },
-      {
-        name: "havaiana azul marinha",
-        src: "media/havaiana-azul-marinha.jpg",
-        gender: "F",
-      },
-      {
-        name: "havaiana verde",
-        src: "media/havaiana-verde.jpg",
-        gender: "F",
-      },
-      {
-        name: "pantufa preta",
-        src: "media/pantufa-preta.webp",
-        gender: "F",
-      },
-      {
-        name: "chinelo de fivela bege",
-        src: "media/chinelo-fivela-bege.png",
-        gender: "M",
-      },
-      {
-        name: "chinelo de cortiça",
-        src: "media/chinelo-cortica.png",
-        gender: "M",
-      },
+      "um-chinelo-de-cortica.png",
+      "um-chinelo-de-fivela-bege.png",
+      "um-chinelo-de-quarto-bege.avif",
+      "um-chinelo-de-quarto-cinzento.avif",
+      "uma-havaiana-azul-marinha.jpg",
+      "uma-havaiana-verde.jpg ",
+      "uma-pantufa-preta.webp",
     ];
 
     window.addEventListener("DOMContentLoaded", () => {
       const chinelo = CHINELOS[Math.floor(Math.random() * CHINELOS.length)];
-      const genderedText = chinelo.gender === "M" ? "um" : "uma";
+      const slipperName = chinelo.split(".")[0].replaceAll("-", " ");
 
-      document.querySelector("#nome-chinelo").innerText = document
-        .querySelector("#nome-chinelo")
-        .innerText.replace("{{gender}}", genderedText)
-        .replace("{{nome-chinelo}}", chinelo.name);
+      document.querySelector("#nome-chinelo").innerText = `És ${slipperName}`;
 
-      document.querySelector("img").setAttribute("src", chinelo.src);
+      document.querySelector("img").setAttribute("src", `media/${chinelo}`);
       document.querySelector("img").setAttribute("alt", chinelo.name);
     });
   </script>
   <body>
     <div>
-      <h1>Parabéns! Foste chamado de chinelo por alguém!</h1>
+      <h1>Parabéns! Alguém te chamou de chinelo!</h1>
       <img />
-      <h1 id="nome-chinelo">És {{gender}} {{nome-chinelo}}.</h1>
+      <h1 id="nome-chinelo"></h1>
     </div>
   </body>
 </html>
