@@ -48,22 +48,22 @@
   </style>
   <script type="module">
     const CHINELOS = [
-      "um-chinelo-de-cortica.png",
-      "um-chinelo-de-fivela-bege.png",
-      "um-chinelo-de-quarto-bege.avif",
-      "um-chinelo-de-quarto-cinzento.avif",
-      "uma-havaiana-azul-marinha.jpg",
-      "uma-havaiana-verde.jpg ",
-      "uma-pantufa-preta.webp",
+      "um-chinelo-de-cortica",
+      "um-chinelo-de-fivela-bege",
+      "um-chinelo-de-quarto-bege",
+      "um-chinelo-de-quarto-cinzento",
+      "uma-havaiana-azul-marinha",
+      "uma-havaiana-verde",
+      "uma-pantufa-preta",
     ];
 
     window.addEventListener("DOMContentLoaded", () => {
       const chinelo = CHINELOS[Math.floor(Math.random() * CHINELOS.length)];
-      const slipperName = chinelo.split(".")[0].replaceAll("-", " ");
+      const slipperName = chinelo.replaceAll("-", " ");
 
       document.querySelector("#nome-chinelo").innerText = `És ${slipperName}`;
 
-      document.querySelector("img").setAttribute("src", `media/${chinelo}`);
+      document.querySelector("img").setAttribute("src", `media/${chinelo}.png`);
       document.querySelector("img").setAttribute("alt", chinelo.name);
     });
   </script>
